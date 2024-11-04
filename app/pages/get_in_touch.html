@@ -1,0 +1,44 @@
+<!--=include head.html-->
+<!--=include sprite.html-->
+<!--=include header.html-->
+<!-- Main -->
+<main class="contact__page">
+  <section class="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__title">
+          <h2 class="contact__title-link">Got a project?</h2>
+          <h2 class="contact__title-text">Let’s Talk</h2>
+        </div>
+        <form action="post" class="contact__block">
+          <div class="contact__item">
+            <input class="contact__item-input" id="name" type="text" required tabindex="1" placeholder=" ">
+            <span class="contact__item-placeholder">Your name *</span>
+            <label class="contact__item-required">This field is required</label>
+          </div>
+          <div class="contact__item">
+            <input class="contact__item-input" id="email" type="email" required tabindex="2" placeholder=" ">
+            <span class="contact__item-placeholder">Your email *</span>
+            <label class="contact__item-required">Invaild email address</label>
+          </div>
+          <div class="contact__item">
+            <textarea class="contact__item-input txta" id="comments" name="comment" required tabindex="3"
+              placeholder=" "></textarea>
+            <span class="contact__item-placeholder">Tell us more about your project *</span>
+            <label class="contact__item-required">This field is required</label>
+          </div>
+          <div class="contact__action">
+            <label class="contact__action-file">Attach file</label>
+            <button class="btn btn__action" type="submit" tabindex="4">
+              <span class="btn__action-text">Send</span>
+              <span><img class="btn__action-arrow" src="img/hero_image_arrow.svg" alt=""></span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<!--=include footer.html-->
+<!--=include modals.html-->
+<!--=include foot.html-->

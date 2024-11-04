@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Manrope", sans-serif;
+  src: local("Manrope Regular"),
+    local("Manrope-Regular"),
+    url("/fonts/Manrope-Regular.woff2") format("woff2"),
+    url("/fonts/Manrope-Regular.woff") format("woff");
+  src: local("Manrope Medium"),
+    local("Manrope-Medium"),
+    url("/fonts/Manrope-Medium.woff2") format("woff2"),
+    url("/fonts/Manrope-Medium.woff") format("woff");
+  src: local("Manrope Semibold"),
+    local("Manrope-Semibold"),
+    url("/fonts/Manrope-Semibold.woff2") format("woff2"),
+    url("/fonts/Manrope-Semibold.woff") format("woff");
+}
