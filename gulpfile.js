@@ -6,8 +6,6 @@ const uglify = require('gulp-uglify-es').default;
 const browserSync = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
 const del = require('del');
-const avif = require('gulp-avif');
-const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const fonter = require('gulp-fonter');
@@ -35,21 +33,13 @@ function fonts() {
 }
 
 function images() {
-  return src(['app/images/src/**/*.*', '!app/images/src/**/*.svg'])
-    .pipe(newer('app/images'))
-    .pipe(avif({ quality: 50 }))
-
-    .pipe(src('app/images/src/**/*.*'))
-    .pipe(src('app/images/src/*.*'))
-    .pipe(newer('app/images'))
-    .pipe(webp())
-
-    .pipe(src('app/images/src/**/*.*'))
-    .pipe(src('app/images/src/*.*'))
-    .pipe(newer('app/images'))
+  return src(['app/img/src/**/*.*', '!app/img/src/**/*.svg'])
+    .pipe(src('app/img/src/**/*.*'))
+    .pipe(src('app/img/src/*.*'))
+    .pipe(newer('app/img'))
     .pipe(imagemin())
 
-    .pipe(dest('app/images'))
+    .pipe(dest('app/img'))
 }
 
 function scripts() {
@@ -78,7 +68,7 @@ function watching() {
     }
   });
   watch(['app/scss/**/*.scss'], styles);
-  watch(['app/images/src'], images);
+  watch(['app/img/src'], images);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
   watch(['app/components/*', 'app/pages/*'], pages);
   watch(['app/*.html']).on('change', browserSync.reload);
@@ -98,10 +88,10 @@ function building() {
     'app/js/*.js',
     '!app/js/main.min.js',
 
-    'app/images/**/*.*',
-    'app/images/*.*',
-    '!app/images/src/**/*.*',
-    '!app/images/src/*.*',
+    'app/img/**/*.*',
+    'app/img/*.*',
+    '!app/img/src/**/*.*',
+    '!app/img/src/*.*',
     
     'app/fonts/*.*',
 
